@@ -2,6 +2,7 @@ import React from 'react';
 import Input from './components/Input';
 import styled from 'styled-components';
 import Checkbox from './components/Checkbox';
+import Text from './components/Text';
 
 const SMainContainer = styled.div`
     width:100%;
@@ -23,6 +24,7 @@ function App() {
       <div className='todoContainer'>
         <Input/>
         <Checkbox/>
+        <Text children={'todolist create'}/>
       </div>
     </SMainContainer>
   );
