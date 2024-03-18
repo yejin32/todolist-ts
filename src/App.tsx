@@ -3,6 +3,7 @@ import Input from './components/Input';
 import styled from 'styled-components';
 import Checkbox from './components/Checkbox';
 import Text from './components/Text';
+import DeleteBtn from './components/DeleteBtn';
 
 const SMainContainer = styled.div`
     width:100%;
@@ -23,8 +24,9 @@ function App() {
     <SMainContainer>
       <div className='todoContainer'>
         <Input/>
-        <Checkbox/>
-        <Text children={'todolist create'}/>
+          <Checkbox/>
+          <Text children={'todolist create'}/>
+          <DeleteBtn/>
       </div>
     </SMainContainer>
   );
