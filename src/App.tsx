@@ -1,6 +1,7 @@
 import React from 'react';
 import Input from './components/Input';
 import styled from 'styled-components';
+import Checkbox from './components/Checkbox';
 
 const SMainContainer = styled.div`
     width:100%;
@@ -21,6 +22,7 @@ function App() {
     <SMainContainer>
       <div className='todoContainer'>
         <Input/>
+        <Checkbox/>
       </div>
     </SMainContainer>
   );
