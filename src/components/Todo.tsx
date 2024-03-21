@@ -12,14 +12,16 @@ const STodo = styled.div`
     `;
 
 interface TodoProps {
+    onClickCheckbox(id: number):void;
+    id: number;
     completed?: boolean;
     text: string;
 }
 
-const Todo = ({completed, text}: TodoProps) => {
+const Todo = ({onClickCheckbox, id, completed, text}: TodoProps) => {
     return (
         <STodo>
-            <Checkbox checked={completed}/>
+            <Checkbox checked={completed} onClick={() => onClickCheckbox(id)}/>
             <Text completed={completed}>
                 {text}
             </Text>

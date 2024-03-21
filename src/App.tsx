@@ -23,7 +23,7 @@ function App() {
     <SMainContainer>
       <div className='todoContainer'>
         <Input/>
-        <Todo text='todolist create'/>
+        {/* <Todo text='todolist create'/> */}
         <TodoList/>
       </div>
     </SMainContainer>

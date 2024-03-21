@@ -4,7 +4,7 @@ import Todo from './Todo';
 
 
 const TodoList = () => {
-    const [todos] = useState([
+    const [todos, setTodos] = useState([
         {
             id: 1,
             text: 'todo1',
@@ -16,11 +16,17 @@ const TodoList = () => {
             completed: true,
         }
     ]);
+
+    const handleClickCheckbox = (id: number) => {
+        setTodos(todos.map(todo => 
+            todo.id === id ? {...todo, completed: !todo.completed} : todo
+            ));
+    }
     
     return (
         <div>
             {todos.map(todos => 
-            <Todo text={todos.text} completed={todos.completed} key={todos.id}/>
+            <Todo onClickCheckbox={handleClickCheckbox} id={todos.id} text={todos.text} completed={todos.completed} key={todos.id}/>
             )}
         </div>
     );
