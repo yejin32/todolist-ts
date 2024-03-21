@@ -22,11 +22,14 @@ const TodoList = () => {
             todo.id === id ? {...todo, completed: !todo.completed} : todo
             ));
     }
+    const handleClickDeleteBtn = (id: number) => {
+        setTodos(todos.filter(todo => todo.id !== id));
+    }
     
     return (
         <div>
             {todos.map(todos => 
-            <Todo onClickCheckbox={handleClickCheckbox} id={todos.id} text={todos.text} completed={todos.completed} key={todos.id}/>
+            <Todo id={todos.id} text={todos.text} completed={todos.completed} key={todos.id} onClickCheckbox={handleClickCheckbox} onClickDeleteBtn={handleClickDeleteBtn}/>
             )}
         </div>
     );
