@@ -17,11 +17,14 @@ const TodoList = () => {
         }
     ]);
 
+    // Checkbox 이벤트 핸들러
     const handleClickCheckbox = (id: number) => {
         setTodos(todos.map(todo => 
             todo.id === id ? {...todo, completed: !todo.completed} : todo
             ));
     }
+
+    // DeleteBtn 이벤트 핸들러
     const handleClickDeleteBtn = (id: number) => {
         setTodos(todos.filter(todo => todo.id !== id));
     }
