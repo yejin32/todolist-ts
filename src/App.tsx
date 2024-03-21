@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Input from './components/Input';
 import Todo from './components/Todo';
+import TodoList from './components/TodoList';
 
 const SMainContainer = styled.div`
     width:100%;
@@ -23,6 +24,7 @@ function App() {
       <div className='todoContainer'>
         <Input/>
         <Todo text='todolist create'/>
+        <TodoList/>
       </div>
     </SMainContainer>
   );
