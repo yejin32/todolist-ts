@@ -26,11 +26,22 @@ const SInputContainer = styled.div`
         padding: 10px;
     }
 `
+interface InputProps {
+    onChange(e: React.ChangeEvent<HTMLInputElement>): void;
+    onKeyDown(e: React.KeyboardEvent<HTMLInputElement>): void;
+    inputText: string;
+}
 
-const Input = () => {
+const Input = ({onChange, onKeyDown, inputText}: InputProps) => {
     return (
         <SInputContainer>
-            <input type="text" className='inputTodo' placeholder='new task'/>
+            <input type="text" 
+            className='inputTodo' 
+            placeholder='new task'
+            onChange={(e) => onChange(e)}
+            onKeyDown={(e) => onKeyDown(e)}
+            value={inputText}
+            />
             <button className='inputBtn'>+</button>
         </SInputContainer>
     );
